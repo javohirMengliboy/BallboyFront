@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/registration.css">
+    
+</head>
+<body>
+<div class="register">
+    <h2>Registration</h2>
+    <form id="registrationForm">
+        <div class="input-box">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Name" name="name" id="name">
+        </div>
+
+        <div class="input-box">
+            <label for="surname">Surname</label>
+            <input type="text" placeholder="Surname" name="surname" id="surname">
+        </div>
+
+        <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" name="email" id="email">
+            <p id="email-warning" style="color: red;"></p>
+        </div>
+
+        <div class="input-box">
+            <label for="firstPassword">
+                Password
+                <input type="password" placeholder="Password" name="firstPassword" id="firstPassword">
+                <input type="checkbox" onclick="showPassword('firstPassword')">
+            </label>
+        </div>
+
+        <div class="input-box">
+            <label for="secondPassword">
+                Re-password
+                <input type="password" placeholder="Re-password" name="secondPassword" id="secondPassword">
+                <input type="checkbox" onclick="showPassword('secondPassword')">
+            </label>
+        </div>
+        <div class="input-box">
+            <button type="submit">Register</button>
+        </div>
+            
+    </form>
+</div>
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>

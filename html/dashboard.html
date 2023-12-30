@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<iframe src="./header.html" width="100%" height="100%" frameborder="0"></iframe>
+<div class="dashboard">
+    <!---------------------------------------- Sidebar start -->
+    <div class="sidebar">
+        <div class="sidebar-container">
+            <div class="user-image">
+                <img src="../images/user_image.png" alt="user_image">
+            </div>
+            <div class="sidebar-list">
+                <ul>
+                    <li> <i class="fa-solid fa-newspaper"></i> Users</li>
+                    <li> <i class="fa-solid fa-newspaper"></i> Articles</li>
+                    <li> <i class="fa-solid fa-newspaper"></i> Settings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------- Sidebar end -->
+    <div class="section">
+        <!---------------------------------------- Navbar start -->
+        <div class="dashboard-navigation" >
+            <ul>
+                <li class="current">Main</li>
+                <li>Users</li>
+                <li>Articles</li>
+            </ul>
+        </div>
+        <!---------------------------------------- Navbar end -->
+        <!---------------------------------------- Main start -->
+        <div class="dashboard-main">
+            <div class="user-list">
+                <div class="dashboard-type-header">
+                    <h3>Users</h3>
+                    <div class="dashboard-add-button">
+                        <button id="update"><i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+                </div>
+                <div class="user-container">
+                    <div class="user-box">
+                        <table>
+                            <tbody id="user_list_table_body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dashboard-more-btn">
+                        <button>More...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="article-list">
+                <div class="dashboard-type-header">
+                    <h3 id="article-header">Articles</h3>
+                </div>
+                <div class="dashboard-article-container">
+                    <div class="dashboard-article-box">
+                        <table>
+                            <tbody id="article_list_table_body">
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">1</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">2</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">3</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">4</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">5</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">6</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">7</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">8</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">9</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="user-order-number">10</td>-->
+<!--                                    <td class="article-title-for-list">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nihil.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, voluptatibus.</td>-->
+<!--                                    <td class="article-status">Status</td>-->
+<!--                                    <td class="article-published-date">Published date</td>-->
+<!--                                    <td class="publisher">-->
+<!--                                        <span class="publisher_name">Muhammadjavohir</span>-->
+<!--                                        <span class="surname">Muhammadjavohirov</span>-->
+<!--                                        <span class="role">Role</span>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="delete">-->
+<!--                                            <i class="fa-solid fa-trash"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button class="update">-->
+<!--                                            <i class="fa-solid fa-pen"></i>-->
+<!--                                        </button>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dashboard-more-btn">
+                        <button>More...</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------- Main end -->
+
+    </div>
+</div>
+<iframe src="footer.html" frameborder="0" width="100%" height="100%"></iframe>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

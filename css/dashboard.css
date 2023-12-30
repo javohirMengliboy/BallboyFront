@@ -1,0 +1,280 @@
+body {
+    background-color: antiquewhite;
+}
+.dashboard {
+    width: 100%;
+    display: flex;
+}
+
+.section {
+    width: 1111px;
+    /*background-color: red;*/
+    margin-left: 5px;
+}
+
+.dashboard-type-header {
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    height: 55px;
+    margin: 10px 0;
+}
+
+.dashboard-type-header h3 {
+    margin: 10px 30px;
+    font-size: 30px;
+}
+.dashboard-add-button {
+    width: 90px;
+    height: 40px;
+    margin: 10px;
+}
+
+.dashboard-add-button button {
+    width: 100%;
+    height: 100%;
+    border: 2px solid green;
+    color: green;
+    font-size: 20px;
+}
+
+.current {
+    background-color: antiquewhite;
+}
+/*-------------------------- Sidebar start */
+.sidebar {
+    width: 250px;
+    height: 1000px;
+    border: 1px solid gray;
+    background-color: darkcyan;
+}
+
+.sidebar-container {
+    width: 230px;
+    height: 900px;
+    margin: 10px;
+}
+
+.user-image {
+    width: 230px;
+    height: 200px;
+}
+
+.user-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation {
+    width: 230px;
+    height: 640px;
+    margin-top: 10px;
+}
+
+.sidebar-list {
+    width: 200px;
+    height: 600px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.sidebar-list ul {
+    font-size: 25px;
+}
+
+.sidebar-list ul li {
+    margin-top: 40px;
+}
+/*-------------------------- Sidebar end */
+
+/*-------------------------- Navbar start */
+.dashboard-navigation {
+    width: 1111px;
+    height: 60px;
+    background-color: darkcyan;
+}
+
+.dashboard-navigation ul{
+    width: 500px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2px;
+}
+
+.dashboard-navigation ul li {
+    width: 100px;
+    height: 58px;
+    display: inline-block;
+    padding-top: 20px;
+    /*margin-left: 40px;*/
+}
+/*-------------------------- Navbar end */
+/*-------------------------- Main start */
+.dashboard-main {
+    width: 1111px;
+}
+
+.dashboard-main-header {
+    height: 50px;
+    /*background-color: gray;*/
+
+}
+
+.dashboard-main-header h3 {
+    font-size: 25px;
+    margin: 10px 30px;
+    padding: 10px;
+}
+
+/*--------------------------------- User list start */
+.user-list {
+    width: 1111px;
+    max-height: 670px;
+}
+
+.user-container {
+    width: 1111px;
+    max-height: 610px;
+}
+
+.user-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 950px;
+    /* height: 540px; */
+    /*background-color: antiquewhite;*/
+    margin: 5px 20px;
+}
+
+#user_list_table_body tr td {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.user-box table {
+    width: 100%;
+}
+
+#user_list_table_body tr {
+    width: 950px;
+    border: 2px solid darkblue;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+table button {
+    width: 30px;
+    height: 30px;
+}
+
+.user-order-number {
+    width: 80px;
+    /*background-color: aliceblue;*/
+    text-align: center;
+}
+
+.publisher_name {
+    width: 170px;
+    /*background-color: blue;*/
+}
+
+.surname {
+    width: 170px;
+    /*background-color: yellow;*/
+}
+
+.status {
+    width: 120px;
+    /*background-color: aliceblue;*/
+}
+
+.role {
+    width: 160px;
+    /*background-color: red;*/
+}
+
+.delete {
+    color: crimson;
+    border: 2px solid crimson;
+}
+
+.update {
+    color: orange;
+    border: 2px solid orange;
+}
+
+.dashboard-more-btn {
+    width: 950px;
+    height: 50px;
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.dashboard-more-btn button {
+    width: 200px;
+    height: 50px;
+    border: 2px solid blue;
+    color: blue;
+}
+/*--------------------------------- User list end */
+/*--------------------------------- Article list start */
+.article-list {
+    width: 1111px;
+    height: 1078px;
+}
+.dashboard-article-container {
+    width: 1111px;
+    height: 600px;
+    /*background-color: darkolivegreen;*/
+    margin-left: 20px;
+
+}
+
+.dashboard-article-box {
+    width: 1000px;
+    min-height: 90px;
+}
+
+.dashboard-article-box table tbody tr td button {
+    width: 50px;
+    height: 50px;
+}
+
+.dashboard-article-box table tbody tr {
+    width: 100%;
+    height: 85px;
+    display: inline-block;
+    border: 2px solid darkblue;
+    margin: 5px 0;
+}
+.article-title-for-list {
+    width: 300px;
+    max-height: 90px;
+    /*background-color: #72f5ff;*/
+}
+
+.article-status {
+    width: 100px;
+    /*background-color: darkblue;*/
+    text-align: center;
+}
+
+.article-published-date {
+    width: 150px;
+    /*background-color: orange;*/
+}
+
+.publisher {
+    width: 200px;
+    /*background-color: yellow;*/
+    font-size: 14px;
+}
+
+.publisher span {
+    display: inline-block;
+}
+
+/*--------------------------------- Article list end */
+/*-------------------------- Main end */

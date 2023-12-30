@@ -1,0 +1,435 @@
+.main {
+    width: 800px;
+    /*background-color: aqua;*/
+    float: left;
+}
+
+.article-type-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    /*background-color: chartreuse;*/
+}
+
+.article-type-header h3 {
+    margin: 10px 30px;
+    font-size: 30px;
+}
+
+.more {
+    width: 70px;
+    height: 55px;
+    text-align: center;
+    margin-right: 12px;
+}
+
+.more a{
+    display: inline-block;
+    margin: 18px;
+}
+
+.actual-news {
+    width: 800px;
+    height: 870px;
+}
+
+
+
+/* Actual news start */
+.first-actual-news {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.first-actual-news-title {
+    position: absolute;
+    bottom: 5px;
+    margin: 0 5px;
+    font-size: 30px;
+}
+
+
+.first-actual-news img {
+    width: 100%;
+    height: 100%;
+    /*z-index: 1;*/
+}
+
+.actual-news-container {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.actual-news-box {
+    display: flex;
+    width: 390px;
+    height: 120px;
+    margin: 5px;
+}
+
+.actual-news-box img {
+    width: 150px;
+    height: 120px;
+    float: left;
+}
+
+
+.actual-title {
+    width: 240px;
+    margin: 5px;
+}
+
+.actual-title {
+
+}
+
+/* Actual news ended*/
+
+/* Tops of week start */
+.tops-of-week {
+    width: 800px;
+    height: 350px;
+}
+
+
+
+.tops-of-week h3 {
+    width: 600px;
+    float: left;
+}
+
+
+
+.tops-of-week-news {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tops-of-week-news-box {
+    width: 250px;
+    height: 280px;
+    margin: 8px;
+}
+
+.tops-of-week-news-box img{
+    width: 100%;
+    height: 160px;
+}
+
+.tops-of-week-news-box p {
+    margin: 5px 2px;
+}
+/* Tops of week ended */
+
+/* Last news start */
+.last-news {
+    width: 400px;
+    height: 1240px;
+    float: left;
+}
+
+.last-news-header {
+    display: flex;
+    justify-content: center;
+    width: 380px;
+    height: 55px;
+    margin: 10px;
+    background-color: chartreuse;
+}
+.last-news-header h4 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.last-news-box {
+    position: relative;
+    width: 380px;
+    margin: 10px auto;
+    height: 110px;
+    border-bottom: 1px solid black;
+}
+
+.last-news-box img {
+    width: 150px;
+    height: 100px;
+}
+
+.last-news-stat {
+    position: absolute;
+    top: 0;
+    margin-left: 10px;
+    width: 220px;
+    display: inline-block;
+    font-size: 10px;
+    color: gray;
+}
+
+.last-news-stat span {
+    margin-right: 10px;
+}
+
+.last-news-title {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 220px;
+    height: 90px;
+}
+
+.last-news-title a {
+    margin: 3px;
+    font-size: 16px;
+}
+
+.more-last-news {
+    width: 200px;
+    height: 50px;
+    margin: 11px auto;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.more-last-news a {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 20px;
+    color: darkblue;
+}
+/* Last news end */
+
+/* Video news start */
+.media-news {
+    width: 1200px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.media-news i {
+    color: white;
+}
+
+.first-media-news {
+    position: relative;
+    width: 580px;
+    height: 370px;
+    background-color: crimson;
+}
+
+.first-media-news img {
+    width: 100%;
+    height: 100%;
+}
+
+.first-media-news i {
+    position: absolute;
+    top: 25%;
+    left: 32%;
+    font-size: 200px;
+}
+
+.first-media-news p {
+    position: absolute;
+    bottom: 0;
+    margin: 5px;
+}
+
+.media-news-container {
+    width: 620px;
+    height: 370px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.media-news-box {
+    width: 290px;
+    height: 175px;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.media-news-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.media-news-box i {
+    position: absolute;
+    top: 21%;
+    left: 34%;
+    font-size: 100px;
+}
+
+.media-news-title {
+    position: absolute;
+    bottom: 0;
+    margin: 2px;
+}
+
+/* Video news end */
+
+.interview-article-table {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.interviews-and-articles {
+    width: 880px;
+    height: 1140px;
+}
+
+/* Interviews start */
+.interviews {
+    width: 880px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.first-interview {
+    display: flex;
+    justify-content: space-between;
+    width: 880px;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+.first-interview img {
+    width: 400px;
+    height: 250px;
+}
+
+.first-interview-title {
+    width: 460px;
+    margin: 10px;
+}
+
+.interview-container {
+    display: flex;
+    width: 880px;
+    height: 280px;
+    justify-content: space-between;
+}
+
+.interview-box {
+    width: 200px;
+    height: 280px;
+}
+
+.interview-box img {
+    width: 200px;
+    height: 150px;
+}
+/* Interviews end */
+
+/* Article start */
+.article {
+    width: 880px;
+    height: 535px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.first-article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 460px;
+    float: left;
+    border-bottom: 1px solid gray;
+}
+
+.first-article-title {
+
+}
+
+.first-article img {
+    width: 300px;
+    height: 230px;
+}
+
+.article-container {
+    width: 560px;
+    height: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+}
+
+.article-box {
+    display: flex;
+    width: 560px;
+    height: 100px;
+    margin-bottom: 19px;
+}
+
+.article-title {
+    width: 390px;
+    margin-left: 10px;
+}
+
+.article-box img {
+    width: 160px;
+    height: 100px;
+    float: left;
+}
+
+/* Article end */
+
+
+/* Table start */
+.table {
+    width: 300px;
+    height: 800px;
+    float: left;
+    margin-left: 20px;
+}
+
+.table h4 {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+}
+.table-container {
+    width: 300px;
+    height: 800px;
+    background-color: honeydew;
+}
+.table td {
+    text-align: center;
+}
+
+.order {
+    width: 20px;
+    height: 20px;
+    background-color: crimson;
+}
+
+.table thead th {
+    background-color: green;
+}
+
+.table th, td {
+    padding: 5px;
+}
+
+.table tbody .team {
+    width: 140px;
+    height: 22px;
+    text-align: left;
+}
+
+.points {
+    width: 30px;
+}
+/* Table end */

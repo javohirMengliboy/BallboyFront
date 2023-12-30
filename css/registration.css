@@ -1,0 +1,11 @@
+.register {
+    width: 1111px;
+    height: 500px;
+    background-color: antiquewhite;
+}
+
+.input-box {
+    width: 80%;
+    margin: 20px auto;
+    /*background-color: red;*/
+}

@@ -1,0 +1,72 @@
+
+.full-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: deepskyblue;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    /*border: 2px solid black;*/
+    border-radius: 10px;
+}
+.logo{
+    width: 300px;
+    text-align: center;
+    float: left;
+}
+
+.logo h1 {
+    margin: 22px;
+}
+.navbar-list {
+    width: 600px;
+    height: 80px;
+    float: left;
+    text-align: center;
+}
+
+.navbar-list ul li{
+    display: inline-block;
+    margin: 0 20px;
+
+}
+
+.navbar-list ul {
+    margin: 29px;
+}
+
+.navbar-list ul li a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.search-and-profile {
+    width: 300px;
+    float: left;
+    height: 80px;
+}
+
+.search-and-profile  i {
+    font-size: 20px;
+}
+.search {
+    width: 100px;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.profile {
+    display: inline;
+}
+
+.clr{
+    clear: both;
+}
