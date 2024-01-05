@@ -10,14 +10,13 @@ function getLast10User(){
         }
     })
     .then (data => {
-        const tRow = tbody.getElementsByTagName("tr");
 
         let index = 1;
         data.map((i) => {
             let rowElement = document.createElement('tr')
 
             let orderNumber = document.createElement("td")
-            orderNumber.classList.add("user-order-number")
+            orderNumber.className = "user-order-number"
             orderNumber.textContent = (index++).toString();
 
             let name = document.createElement("td")
@@ -35,36 +34,22 @@ function getLast10User(){
 
             let role = document.createElement("td");
             role.classList.add("role")
-            role.textContent = i.role;
+            role.textContent = i.role.substring(5);
 
-            let deleteButton = document.createElement("button")
 
-            let deleteTD = createDeleteButton(i, deleteButton);
+            let deleteTD = document.createElement("td");
+            let deleteButton = createDeleteButton(i)
             deleteButton.onclick = function() {
                 deleteUser(i.id)
             };
+            deleteTD.appendChild(deleteButton)
 
-            // let deleteTD = document.createElement("td")
-            // let deleteButton = document.createElement("button")
-            // deleteButton.classList.add("delete")
-            // deleteButton.value = i.id
-            // let deleteButtonSpan = document.createElement("i")
-            // deleteButtonSpan.classList.add("fa-solid")
-            // deleteButtonSpan.classList.add("fa-trash")
-            // deleteButton.appendChild(deleteButtonSpan)
-            // deleteTD.appendChild(deleteButton)
-            //
-            // deleteButton.onclick = function() {
-            //     deleteUser(i.id)
-            // };
 
             let updateTD = document.createElement("td")
-            let updateButton = document.createElement("button")
-            updateButton.classList.add("update")
-            let updateButtonSpan = document.createElement("i")
-            updateButtonSpan.classList.add("fa-solid")
-            updateButtonSpan.classList.add("fa-pen")
-            updateButton.appendChild(updateButtonSpan)
+            let updateButton = createUpdateButton(i)
+            updateButton.onclick = function (){
+                userInfo(i.id);
+            }
             updateTD.appendChild(updateButton)
 
             rowElement.appendChild(orderNumber)
@@ -84,8 +69,8 @@ function getLast10User(){
         console.log(error)
     }) )
 }
-let btn = document.getElementById('update')
 
+let btn = document.getElementById('add_user')
 btn.addEventListener('click', (e) => {
     e.preventDefault()
     getLast10User();
@@ -110,13 +95,13 @@ function deleteUser(id){
 
 /*--------------------------- Article List */
 
-let articleTableBody = document.getElementById("article-header")
-articleTableBody.addEventListener('click', (e) =>{
+let articleHeader = document.getElementById("article-header")
+articleHeader.addEventListener('click', (e) =>{
     e.preventDefault()
     getLast10Article()
 })
 function getLast10Article(){
-    fetch("http://localhost:8080/api/v1/article/open/getLast5Article?type=Yevropa", {method: "GET"})
+    fetch("http://localhost:8080/api/v1/article/open/getLast10Article", {method: "GET"})
         .then(response => {
             if (!response.ok){
                 alert("user not found")
@@ -125,10 +110,14 @@ function getLast10Article(){
             }
         })
         .then (data => {
-            const tRow = articleTableBody.getElementsByTagName("tr");
-
+            console.log(data.object)
+            if (data.status === false){
+                throw new Error(data.message);
+            }
+            const articleTableBody = document.getElementById("article_list_table_body");
             let index = 1;
-            data.map((i) => {
+            let object = data.object;
+            object.map((i) => {
                 const rowElement = document.createElement('tr')
 
                 let orderNumber = document.createElement("td")
@@ -137,48 +126,52 @@ function getLast10Article(){
 
                 let title = document.createElement("td")
                 title.classList.add("article-title-for-list");
-                title.textContent = i.title
+                console.log(i.title)
+                title.textContent = i.title;
 
                 let status = document.createElement("td")
-                title.classList.add("article-status");
-                title.textContent = i.status
+                status.classList.add("article-status");
+                console.log("status -> "+i.status)
+                status.textContent = i.status;
 
                 let publishedDate = document.createElement("td")
-                title.classList.add("article-published-date");
-                title.textContent = i.publishedDate
+                publishedDate.classList.add("article-published-date");
+                publishedDate.textContent = i.publishedDate;
 
                 let publisher = document.createElement("td")
-                title.classList.add("publisher");
-                let publisherName = document.createElement("span")
-                publisherName.classList.add(("publisher_name"))
-                publisherName.textContent = i.profile.name;
+                publisher.classList.add("publisher");
+                    let publisherName = document.createElement('span')
+                    // publisherName.classList.add(("publisher_name"))
+                    publisherName.textContent = i.publisherName;
 
-                let publisherSurname = document.createElement("span")
-                publisherSurname.classList.add(("publisher_surname"))
-                publisherSurname.textContent = i.profile.surname;
+                    let publisherSurname = document.createElement('span')
+                    // publisherSurname.classList.add(("publisher_surname"))
+                    publisherSurname.textContent = i.publisherSurname;
 
-                let publisherRole = document.createElement("span")
-                publisherRole.classList.add(("publisher_role"))
-                publisherRole.textContent = i.profile.role;
+                    let publisherRole = document.createElement('span')
+                    // publisherRole.classList.add(("publisher_role"))
+                    publisherRole.textContent = i.publisherRole.substring(5);
 
-                publisher.append(publisherName,publisherSurname,publisherRole);
+                publisher.append(publisherName);
+                publisher.append(publisherSurname);
+                publisher.append(publisherRole);
 
-                let deleteTD = createDeleteButton(i);
-                let deleteButton = deleteTD.getElementsByTagName('button')
+                let deleteTD = document.createElement("td")
+                let deleteButton = createDeleteButton(i);
                 deleteButton.onclick = function () {
                     deleteArticleById(i.id);
                 }
+                deleteTD.appendChild(deleteButton)
+
+
                 let updateTD = document.createElement("td")
-                let updateButton = document.createElement("button")
-                updateButton.classList.add("update")
-                let updateButtonSpan = document.createElement("i")
-                updateButtonSpan.classList.add("fa-solid")
-                updateButtonSpan.classList.add("fa-pen")
-                updateButton.appendChild(updateButtonSpan)
+                let updateButton = createUpdateButton(i)
+
                 updateTD.appendChild(updateButton)
 
-                rowElement.appendChild(orderNumber)
-                rowElement.appendChild(title)
+
+                rowElement.append(orderNumber)
+                rowElement.append(title)
                 rowElement.append(status)
                 rowElement.append(publishedDate)
                 rowElement.append(publisher)
@@ -186,7 +179,6 @@ function getLast10Article(){
                 rowElement.append(updateTD)
 
                 articleTableBody.appendChild(rowElement)
-
             })
         })
         .catch(error => {
@@ -211,14 +203,28 @@ function deleteArticleById (id){
         })
 }
 
-function createDeleteButton (i, deleteButton){
-    let deleteTD = document.createElement("td")
+function createDeleteButton (i){
+    let deleteButton = document.createElement("button")
     deleteButton.classList.add("delete")
     deleteButton.value = i.id
-    let deleteButtonSpan = document.createElement("i")
-    deleteButtonSpan.classList.add("fa-solid")
-    deleteButtonSpan.classList.add("fa-trash")
-    deleteButton.appendChild(deleteButtonSpan)
-    deleteTD.appendChild(deleteButton)
-    return deleteTD;
+    let deleteButtonIcon = document.createElement("i")
+    deleteButtonIcon.classList.add("fa-solid")
+    deleteButtonIcon.classList.add("fa-trash")
+    deleteButton.appendChild(deleteButtonIcon)
+    return deleteButton;
+}
+
+function createUpdateButton (i){
+    let updateButton = document.createElement("button")
+    updateButton.classList.add("update")
+    updateButton.value = i.id
+    let updateButtonIcon = document.createElement("i")
+    updateButtonIcon.classList.add("fa-solid")
+    updateButtonIcon.classList.add("fa-pen")
+    updateButton.appendChild(updateButtonIcon)
+    return updateButton;
+}
+
+function userInfo(id) {
+    window.location.href = '../html/userInfo.html?id='+id;
 }

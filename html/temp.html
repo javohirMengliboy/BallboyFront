@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #userList {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .user-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            color: #3498db;
+        }
+
+        button:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div id="userList"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load user list on page load
+        loadUserList();
+
+        function loadUserList() {
+            // Fetch last 10 users from the API
+            fetch('http://localhost:8080/api/v1/profile/getLast10')
+                .then(response => response.json())
+                .then(data => {
+                    // Display user list
+                    displayUserList(data);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function displayUserList(users) {
+            var userList = document.getElementById('userList');
+            userList.innerHTML = '';
+
+            users.forEach(function (user) {
+                var userRow = document.createElement('div');
+                userRow.className = 'user-row';
+
+                var nameSpan = document.createElement('span');
+                nameSpan.textContent = user.name + ' ' + user.surname;
+
+                var statusSpan = document.createElement('span');
+                statusSpan.textContent = 'Status: ' + user.status;
+
+                var roleSpan = document.createElement('span');
+                roleSpan.textContent = 'Role: ' + user.role;
+
+                var deleteBtn = document.createElement('button');
+                deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+                deleteBtn.addEventListener('click', function () {
+                    // Delete button clicked
+                    deleteUser(user.id);
+                });
+
+                var infoBtn = document.createElement('button');
+                infoBtn.innerHTML = '<i class="fas fa-info"></i>';
+                infoBtn.addEventListener('click', function () {
+                    // Info button clicked
+                    showUserInfo(user.id);
+                });
+
+                userRow.appendChild(nameSpan);
+                userRow.appendChild(statusSpan);
+                userRow.appendChild(roleSpan);
+                userRow.appendChild(deleteBtn);
+                userRow.appendChild(infoBtn);
+
+                userList.appendChild(userRow);
+            });
+        }
+
+        function deleteUser(userId) {
+            // Send a delete request to the API
+            fetch('http://localhost:8080/api/v1/profile/delete/' + userId, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // User deleted successfully, reload the user list
+                        loadUserList();
+                    } else {
+                        console.error('Error:', response.statusText);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function showUserInfo(userId) {
+            // Redirect to userInfo.html with the user id as a query parameter
+            window.location.href = 'temp2.html?id=' + userId;
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #userInfo {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+            color: #555;
+        }
+
+        strong {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div id="userInfo"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get user id from the query parameter
+        var userId = getUrlParameter('id');
+
+        // Fetch user information from the API
+        fetch('http://localhost:8080/api/v1/profile/getById/' + userId)
+            .then(response => response.json())
+            .then(user => {
+                // Display user information
+                displayUserInfo(user);
+            })
+            .catch(error => console.error('Error:', error));
+
+        function displayUserInfo(user) {
+            var userInfoDiv = document.getElementById('userInfo');
+
+            // Adding user image
+            var userImage = document.createElement('img');
+            userImage.src = '../images/user_image.png';
+            userImage.alt = 'User Image';
+            userInfoDiv.appendChild(userImage);
+
+            // Adding user name and surname
+            var userName = document.createElement('h2');
+            userName.textContent = user.name + ' ' + user.surname;
+            userInfoDiv.appendChild(userName);
+
+            // Adding other user information
+            var emailParagraph = document.createElement('p');
+            emailParagraph.innerHTML = '<strong>Email:</strong> ' + user.email;
+            userInfoDiv.appendChild(emailParagraph);
+
+            var phoneParagraph = document.createElement('p');
+            phoneParagraph.innerHTML = '<strong>Phone:</strong> ' + user.phone;
+            userInfoDiv.appendChild(phoneParagraph);
+
+            var genderParagraph = document.createElement('p');
+            genderParagraph.innerHTML = '<strong>Gender:</strong> ' + user.gender;
+            userInfoDiv.appendChild(genderParagraph);
+        }
+
+        // Function to get query parameters from the URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+    });
+</script>
+
+</body>
+</html>
