@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get user id from the query parameter
     let userAllInfo = document.getElementById("user_all_info");
     let id = getUrlParameter('id');
+    console.log(id)
     fetch("http://localhost:8080/api/v1/profile/getById/" + id)
         .then(response => response.json())
         .then(data => {

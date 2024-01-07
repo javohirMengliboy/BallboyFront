@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body {
+
+            /*background-color: #555555;*/
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #login-box {
+            margin-top: 50px;
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        form {
+            width: 400px;
+            height: 400px;
+            /*background-color: white;*/
+            margin: 50px auto;
+        }
+
+        .form_container {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 300px;
+            height: 40px;
+            margin-top: 50px;
+            border: none;
+            border-bottom: 2px solid blue;
+            font-size: 20px;
+        }
+
+        #show-password {
+            /*box-sizing: border-box;*/
+            display: inline-block;
+            margin-top: 60px;
+            width: 50px;
+            height: 32px;
+            /*padding: 12px 0;*/
+            border-bottom: 2px solid blue;
+
+
+        }
+
+        label {
+            display: flex;
+            text-align: center;
+        }
+
+
+        #password {
+            width: 250px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        #is-forgot {
+            margin-top: 30px;
+        }
+
+        #login-button {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #login-button button {
+            width: 100px;
+            height: 35px;
+            color: #fff;
+            background-color: blue;
+            border: blue;
+        }
+
+        .hide {
+            display: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="login-box">
+        <form id="form">
+            <div class="form_container">
+                <label for="email">
+                    <input type="email" placeholder="Email" id="email" name="email">
+                </label>
+
+                <label for="password" id="password-label">
+                    <input type="password" placeholder="Password" id="password" name="password" />
+                    <span id="show-password"><i class="fa-regular fa-eye-slash"></i></span>
+                </label>
+
+
+                <p id="is-forgot"><a href="#">Forgot password?</a></p>
+                <div id="login-button">
+                    <p class="show" id="note">Ma'lumotlarni to'ldirsangiz login tugmasi ochiladi</p>
+                    <button class="hide">Log In</button>
+                </div>
+            </div>
+        </form>
+
+
+    </div>
+
+<script>
+    const showPassword = document.getElementById('show-password')
+    showPassword.addEventListener("click", (e) => {
+        e.preventDefault();
+        const password = document.getElementById('password');
+        const icon = document.querySelector('i');
+        if (password.type === 'password'){
+            password.type = 'text'
+            icon.className = 'fa-regular fa-eye'
+            icon.style.color = 'blue'
+        }else {
+            password.type = 'password'
+            icon.className = 'fa-regular fa-eye-slash'
+            icon.style.color = 'gray'
+
+        }
+    })
+
+    const form = document.getElementById('form');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const btn = document.querySelector('button');
+    const p = document.querySelector('#note');
+
+    form.addEventListener('keyup', () => {
+        if (email.value.trim().length > 1 && password.value.trim().length > 1) {
+            // console.log(email.value.trim().length)
+            // console.log(password.value.trim().length)
+            btn.className = 'show'
+            p.className = 'hide'
+        } else {
+            btn.className = 'hide'
+            p.className = 'show'
+        }
+    })
+
+</script>
+</body>
+</html>
